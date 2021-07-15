@@ -3,7 +3,7 @@
 	<Shell>
 		<App id="App">
 			<pages>
-				<Page title="Bee hive">
+				<Page title="Hive Minds">
 					<!--<content>-->
 					<!--Button-->
 					<!--<Panel width="auto" class="myAppDemoWT">-->
@@ -34,15 +34,15 @@
 					<!--		</viz:VizFrame>-->
 					<!--	</l:flexContent>-->
 					<!--</l:FixFlex>-->
-					<Panel expandable="true" headerText="Skills in team" expanded="true">
+					<Panel expandable="true" headerText="Skills profile" expanded="true">
 					<l:FixFlex id='chartFixFlex' minFlexSize="150">
 						<l:flexContent>
 							<viz:Popover id="idPopOver"></viz:Popover>
-							<viz:VizFrame id="idVizFrame" vizType='column' width="auto" vizProperties="{title: {text: 'Bandwidth of Skills in team'}}">
+							<viz:VizFrame id="idVizFrame" vizType='column' width="auto" vizProperties="{title: {text: 'Skills Graph'}}">
 								<viz:dataset>
 									<viz.data:FlattenedDataset data="{/Skills}">
 										<viz.data:dimensions>
-											<viz.data:DimensionDefinition name="Time" value="{Technical_Skill}"/>
+											<viz.data:DimensionDefinition name="Skills" value="{Technical_Skill}"/>
 										</viz.data:dimensions>
 										<viz.data:measures>
 											<viz.data:MeasureDefinition name="Total" value="{Value}"/>
@@ -51,7 +51,7 @@
 								</viz:dataset>
 								<viz:feeds>
 									<viz.feeds:FeedItem id='valueAxisFeed' uid="valueAxis" type="Measure" values="Total"/>
-									<viz.feeds:FeedItem id='categoryAxisFeed' uid="categoryAxis" type="Dimension" values="Time"/>
+									<viz.feeds:FeedItem id='categoryAxisFeed' uid="categoryAxis" type="Dimension" values="Skills"/>
 								</viz:feeds>
 							</viz:VizFrame>
 						</l:flexContent>
@@ -84,7 +84,7 @@
 								<Label text="Manager's Name"/>
 							</Column>
 							<Column>
-								<Label text="Hive Name"/>
+								<Label text="BeeHive"/>
 							</Column>
 							<Column>
 								<Label text="Number of team members"/>
