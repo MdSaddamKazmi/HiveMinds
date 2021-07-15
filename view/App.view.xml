@@ -1,0 +1,152 @@
+<mvc:View controllerName="my.Test.controller.App" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:viz="sap.viz.ui5.controls"
+	xmlns:viz.data="sap.viz.ui5.data" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds" xmlns:mvc="sap.ui.core.mvc">
+	<Shell>
+		<App id="App">
+			<pages>
+				<Page title="Bee hive">
+					<!--<content>-->
+					<!--Button-->
+					<!--<Panel width="auto" class="myAppDemoWT">-->
+					<!--<HBox>-->
+					<!--	<Text text="Shipper Name" class="sapUISmallMarginEnd sapUiSmallMarginTop"></Text>-->
+					<!--	<Input class="sapUiSizeCompact sapUiTinyMargin sapUiTinyMarginTop " value="{/recipient/name}" width="auto"/>-->
+					<!--	<Button text="Search" class="myCustomButton sapUiSizeCompact sapThemeHighlight-asColor myCustomText" press="onNewFilter" width="auto"/>-->
+					<!--</HBox>-->
+					<!--<l:FixFlex id='chartFixFlex' minFlexSize="350">-->
+					<!--	<l:flexContent>-->
+					<!--<viz:Popover id="idPopOver"></viz:Popover>-->
+					<!--		<viz:VizFrame id="idVizFrame" uiConfig="{applicationSet:'fiori'}" vizType='column' width="auto"-->
+					<!--			vizProperties="{title: {text: 'Knowledge of Technical Skills'}}">-->
+					<!--			<viz:dataset>-->
+					<!--				<viz.data:FlattenedDataset data="{/Skills}">-->
+					<!--					<viz.data:dimensions>-->
+					<!--						<viz.data:DimensionDefinition name="Technical Skill" value="{Technical_Skill}"/>-->
+					<!--					</viz.data:dimensions>-->
+					<!--					<viz.data:measures>-->
+					<!--						<viz.data:MeasureDefinition name="Knowledge Percentage" value="{Value}"/>-->
+					<!--					</viz.data:measures>-->
+					<!--				</viz.data:FlattenedDataset>-->
+					<!--			</viz:dataset>-->
+					<!--			<viz:feeds>-->
+					<!--				<viz.feeds:FeedItem id='valueAxisFeed' uid="valueAxis" type="Measure" values="Knowledge Percentage"/>-->
+					<!--				<viz.feeds:FeedItem id='categoryAxisFeed' uid="categoryAxis" type="Dimension" values="Technical Skill"/>-->
+					<!--			</viz:feeds>-->
+					<!--		</viz:VizFrame>-->
+					<!--	</l:flexContent>-->
+					<!--</l:FixFlex>-->
+					<Panel expandable="true" headerText="Skills in team" expanded="true">
+					<l:FixFlex id='chartFixFlex' minFlexSize="150">
+						<l:flexContent>
+							<viz:Popover id="idPopOver"></viz:Popover>
+							<viz:VizFrame id="idVizFrame" vizType='column' width="auto" vizProperties="{title: {text: 'Bandwidth of Skills in team'}}">
+								<viz:dataset>
+									<viz.data:FlattenedDataset data="{/Skills}">
+										<viz.data:dimensions>
+											<viz.data:DimensionDefinition name="Time" value="{Technical_Skill}"/>
+										</viz.data:dimensions>
+										<viz.data:measures>
+											<viz.data:MeasureDefinition name="Total" value="{Value}"/>
+										</viz.data:measures>
+									</viz.data:FlattenedDataset>
+								</viz:dataset>
+								<viz:feeds>
+									<viz.feeds:FeedItem id='valueAxisFeed' uid="valueAxis" type="Measure" values="Total"/>
+									<viz.feeds:FeedItem id='categoryAxisFeed' uid="categoryAxis" type="Dimension" values="Time"/>
+								</viz:feeds>
+							</viz:VizFrame>
+						</l:flexContent>
+					</l:FixFlex>
+					</Panel>
+					<!--</Panel>-->
+					<!--Table-->
+					<Table id="table1" class="sapUiSizeCompact" items="{invoice>/Invoices}" growing="true" growingThreshold="5">
+						<!--Search option-->
+						<!--<headerToolbar>-->
+						<infoToolbar>
+							<OverflowToolbar id="otbSubheader">
+								<Label text="Home"/>
+								<ToolbarSpacer/>
+								<SearchField ariaLabelledBy="text1" id="ShipperName" liveChange="onFilter">
+									<layoutData><OverflowToolbarLayoutData maxWidth="300px" shrinkable="true" priority="NeverOverflow"/></layoutData>
+								</SearchField>
+								<!--		<Button text="Reset" type="Transparent" press="onReset"/>-->
+								<!--		<OverflowToolbarButton tooltip="Sort" type="Transparent" text="Sort" icon="sap-icon://sort" press="onSort"/>-->
+								<!--		<OverflowToolbarButton tooltip="Group" type="Transparent" text="Group" icon="sap-icon://group-2" press="onGroup"/>-->
+								<!--	</OverflowToolbar>-->
+								<!--</headerToolbar>-->
+								<!--<infoToolbar>-->
+								<!--<OverflowToolbar>-->
+							</OverflowToolbar>
+						</infoToolbar>
+						<!--Column Header-->
+						<columns>
+							<Column>
+								<Label text="Manager's Name"/>
+							</Column>
+							<Column>
+								<Label text="Hive Name"/>
+							</Column>
+							<Column>
+								<Label text="Number of team members"/>
+							</Column>
+							<!--<Column>-->
+							<!--	<Label text="Units Ordered"/>-->
+							<!--</Column>-->
+							<!--<Column>-->
+							<!--	<Label text="Price"/>-->
+							<!--</Column>-->
+						</columns>
+						<!-- Column data-->
+						<ColumnListItem press="onPress" type="Navigation">
+							<cells>
+								<Text text="{invoice>ManagerName}"></Text>
+								<ObjectIdentifier title="{invoice>HiveName}"/>
+								<Text text="{invoice>Num}"></Text>
+								<!--<Text text="{invoice>ShipperName}"></Text>-->
+								<!--<Text text="{invoice>Quantity}"></Text>-->
+								<!-- 	<Text text="{invoice>ExtendedPrice}"></Text> -->
+								<!--<ObjectNumber-->
+								<!--	number="{ parts:[{path:'invoice>ExtendedPrice'},{path:'invoice>Currency'}], type: 'sap.ui.model.type.Currency', formatOptions: {showMeasure: false} }"-->
+								<!--	unit="{invoice>Currency}"/>-->
+							</cells>
+						</ColumnListItem>
+					</Table>
+					<!--<l:FixFlex id='chartFixFlex' minFlexSize="250">-->
+					<!--	<l:flexContent>-->
+					<!--		<viz:Popover id="idPopOver"></viz:Popover>-->
+					<!--		<viz:VizFrame id="idVizFrame" vizType='column' width="auto" vizProperties="{title: {text: 'Vaccination Trend : Today'}}">-->
+					<!--			<viz:dataset>-->
+					<!--				<viz.data:FlattenedDataset data="{/Skills}">-->
+					<!--					<viz.data:dimensions>-->
+					<!--						<viz.data:DimensionDefinition name="Skills" value="{Technical_Skill}"/>-->
+					<!--					</viz.data:dimensions>-->
+					<!--					<viz.data:measures>-->
+					<!--						<viz.data:MeasureDefinition name="Total" value="{Value}"/>-->
+					<!--					</viz.data:measures>-->
+					<!--				</viz.data:FlattenedDataset>-->
+					<!--			</viz:dataset>-->
+					<!--			<viz:feeds>-->
+					<!--				<viz.feeds:FeedItem id='valueAxisFeed' uid="valueAxis" type="Measure" values="Total"/>-->
+					<!--				<viz.feeds:FeedItem id='categoryAxisFeed' uid="categoryAxis" type="Dimension" values="Skills"/>-->
+					<!--			</viz:feeds>-->
+					<!--		</viz:VizFrame>-->
+					<!--	</l:flexContent>-->
+					<!--</l:FixFlex>-->
+					<!--</content>-->
+					<!--<footer>-->
+					<!--Footer buttons-->
+					<!--	<OverflowToolbar id="otbFooter">-->
+					<!--		<ToolbarSpacer/>-->
+					<!--		<Button type="Accept" text="Accept" press="onToggleAccept">-->
+					<!--			<layoutData><OverflowToolbarLayoutData priority="NeverOverflow"/></layoutData>-->
+					<!--		</Button>-->
+					<!--		<Button type="Reject" text="Reject" press="onToggleReject">-->
+					<!--			<layoutData><OverflowToolbarLayoutData priority="NeverOverflow"/></layoutData>-->
+					<!--		</Button>-->
+					<!--	</OverflowToolbar>-->
+					<!--</footer>-->
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

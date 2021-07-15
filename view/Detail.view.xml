@@ -1,0 +1,126 @@
+<mvc:View controllerName="my.Test.controller.Detail" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout">
+	<!--	<Page navButtonPress="onNavBack" showNavButton="true" title="Test - Details">
+		<ObjectHeader intro="{invoice>ShipperName}" title="{invoice>ProductName}"/>
+	</Page> -->
+	<Page navButtonPress="onNavBack" showNavButton="true" title="Test - Details">
+		<!--<Text class="sapUiTinyMargin" text="{/invoicePath/Team_Name}"/>-->
+		<!--<Text text="saddam"/>-->
+		<l:BlockLayout id="BlockLayout" background="Dashboard">
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell >
+					<FlexBox justifyContent="Center" class="responsive">
+						<Avatar src="./images/download.png" displaySize="XL"/>
+					</FlexBox>
+					<FlexBox justifyContent="Center" class="responsive myBoldFont">
+						<l:VerticalLayout class="sapUiSmallMarginBeginEnd">
+							<FlexBox justifyContent="Center" class="responsive">
+								<Text text="Team Name : {/invoicePath/Team_Name}"/>
+							</FlexBox>
+							<FlexBox justifyContent="Center" class="responsive"><Text
+								text="Team Mmebers : {/invoicePath/Member1name} , {/invoicePath/Member2name} ,{/invoicePath/Member3name} , {/invoicePath/Member4name} ,"/></FlexBox>
+							<!--<FlexBox justifyContent="Center" class="responsive">-->
+							<!--	<Text text="+91 9739074686"/></FlexBox>-->
+						</l:VerticalLayout>
+					</FlexBox>
+				</l:BlockLayoutCell>
+				<!--<l:BlockLayoutCell title="Current Status :" titleAlignment="Center">-->
+				<!--	<Text id="text3" wrappingType="Hyphenated" text=""/>-->
+				<!--	<Text id="text4" wrappingType="Hyphenated" text=""/>-->
+				<!--	<Text id="text5" wrappingType="Hyphenated" text=""/>-->
+				<!--	<Text id="text6" wrappingType="Hyphenated" text=""/>-->
+				<!--	<Text id="text7" wrappingType="Hyphenated" text=""/>-->
+				<!--	<Text id="text8" wrappingType="Hyphenated" text=""/>-->
+				<!--	<Text id="text9" wrappingType="Hyphenated" text=""/>-->
+				<!--	<Text id="text10" wrappingType="Hyphenated" text=""/>-->
+				<!--	<FlexBox justifyContent="Center" 	alignItems="Center" class="responsive">-->
+				<!--		<Text id="text1" wrappingType="Hyphenated" text="Company : SAP LABS"/>-->
+				<!--	</FlexBox>-->
+				<!--	<FlexBox justifyContent="Center" 	alignItems="Center" class="responsive">-->
+				<!--		<Text id="text2" wrappingType="Hyphenated" text="Notice Period : 60 days"/>-->
+				<!--	</FlexBox>-->
+				<!--</l:BlockLayoutCell>-->
+				<!--<l:BlockLayoutCell title="Asynchronous (async) processing">-->
+				<!--	<Text id="text3" wrappingType="Hyphenated"-->
+				<!--		text="In contrast to synchronous processing this processing mode does not keep the browser thread busy but does the processing in the background and continues with the next task. Code can be executed asynchronously and a callback function is triggered when a certain condition is met. Similarly, a file can be loaded asynchronously. Asynchronous processing is highly recommended for performance reasons and to not freeze the UI."/>-->
+				<!--</l:BlockLayoutCell>-->
+				<!--<l:BlockLayoutCell title="Bootstrap">-->
+				<!--	<Text id="text4" wrappingType="Hyphenated"-->
+				<!--		text="To use the UI5 features in your web page, you have to load and initialize – or bootstrap – the UI5 runtime in your HTML page."/>-->
+				<!--</l:BlockLayoutCell>-->
+			</l:BlockLayoutRow>
+		</l:BlockLayout>
+		<l:BlockLayout id="BlockLayout1" background="Dashboard">
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell title="{/invoicePath/Member1name}">
+					<FlexBox justifyContent="Start" class="responsive" alignItems="Center">
+						<l:VerticalLayout class="sapUiSmallMarginBeginEnd">
+							<FlexBox justifyContent="Start" alignItems="Center" class="responsive ">
+								<VBox>
+									<Text
+										text="Current Skills : {/invoicePath/Member1Skill}"/>
+									<Text text=""/>
+									<!--<Text text="Notice Period : 60 days"/>-->
+								</VBox>
+							</FlexBox>
+							<!--<FlexBox justifyContent="Center" class="responsive"><Text text="saddamkazmi25@gmail.com"/></FlexBox>-->
+						</l:VerticalLayout>
+					</FlexBox>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+		</l:BlockLayout>
+				<l:BlockLayout id="BlockLayout2" background="Dashboard">
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell title="{/invoicePath/Member2name}">
+					<FlexBox justifyContent="Start" class="responsive" alignItems="Center">
+						<l:VerticalLayout class="sapUiSmallMarginBeginEnd">
+							<FlexBox justifyContent="Start" alignItems="Center" class="responsive ">
+								<VBox>
+									<Text
+										text="Current Skills : {/invoicePath/Member2Skill}"/>
+									<Text text=""/>
+								</VBox>
+							</FlexBox>
+							<!--<FlexBox justifyContent="Center" class="responsive"><Text text="saddamkazmi25@gmail.com"/></FlexBox>-->
+						</l:VerticalLayout>
+					</FlexBox>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+		</l:BlockLayout>
+				<l:BlockLayout id="BlockLayout3" background="Dashboard">
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell title="{/invoicePath/Member3name}">
+					<FlexBox justifyContent="Start" class="responsive" alignItems="Center">
+						<l:VerticalLayout class="sapUiSmallMarginBeginEnd">
+							<FlexBox justifyContent="Start" alignItems="Center" class="responsive ">
+								<VBox>
+								<Text
+										text="Current Skills : {/invoicePath/Member3Skill}"/>
+									<Text text=""/>
+								</VBox>
+							</FlexBox>
+							<!--<FlexBox justifyContent="Center" class="responsive"><Text text="saddamkazmi25@gmail.com"/></FlexBox>-->
+						</l:VerticalLayout>
+					</FlexBox>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+		</l:BlockLayout>
+				<l:BlockLayout id="BlockLayout4" background="Dashboard">
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell title="{/invoicePath/Member4name}">
+					<FlexBox justifyContent="Start" class="responsive" alignItems="Center">
+						<l:VerticalLayout class="sapUiSmallMarginBeginEnd">
+							<FlexBox justifyContent="Start" alignItems="Center" class="responsive ">
+								<VBox>
+									<Text
+										text="Current Skills : {/invoicePath/Member4Skill}"/>
+									<Text text=""/>
+								</VBox>
+							</FlexBox>
+							<!--<FlexBox justifyContent="Center" class="responsive"><Text text="saddamkazmi25@gmail.com"/></FlexBox>-->
+						</l:VerticalLayout>
+					</FlexBox>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+		</l:BlockLayout>
+	</Page>
+</mvc:View>
