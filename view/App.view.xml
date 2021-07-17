@@ -59,7 +59,7 @@
 					</Panel>
 					<!--</Panel>-->
 					<!--Table-->
-					<Table id="table1" class="sapUiSizeCompact" items="{invoice>/Invoices}" growing="true" growingThreshold="5">
+					<Table id="table1" class="sapUiSizeCompact" items="{invoice>/Invoices}" >
 						<!--Search option-->
 						<!--<headerToolbar>-->
 						<infoToolbar>
