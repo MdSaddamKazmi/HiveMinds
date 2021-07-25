@@ -35,40 +35,40 @@
 					<!--	</l:flexContent>-->
 					<!--</l:FixFlex>-->
 					<Panel expandable="true" headerText="Skills profile" expanded="true">
-					<l:FixFlex id='chartFixFlex' minFlexSize="150">
-						<l:flexContent>
-							<viz:Popover id="idPopOver"></viz:Popover>
-							<viz:VizFrame id="idVizFrame" vizType='column' width="auto" vizProperties="{title: {text: 'Skills Graph'}}">
-								<viz:dataset>
-									<viz.data:FlattenedDataset data="{/Skills}">
-										<viz.data:dimensions>
-											<viz.data:DimensionDefinition name="Skills" value="{Technical_Skill}"/>
-										</viz.data:dimensions>
-										<viz.data:measures>
-											<viz.data:MeasureDefinition name="Total" value="{Value}"/>
-										</viz.data:measures>
-									</viz.data:FlattenedDataset>
-								</viz:dataset>
-								<viz:feeds>
-									<viz.feeds:FeedItem id='valueAxisFeed' uid="valueAxis" type="Measure" values="Total"/>
-									<viz.feeds:FeedItem id='categoryAxisFeed' uid="categoryAxis" type="Dimension" values="Skills"/>
-								</viz:feeds>
-							</viz:VizFrame>
-						</l:flexContent>
-					</l:FixFlex>
+						<l:FixFlex id='chartFixFlex' minFlexSize="150">
+							<l:flexContent>
+								<viz:Popover id="idPopOver"></viz:Popover>
+								<viz:VizFrame id="idVizFrame" vizType='column' width="auto" vizProperties="{title: {text: 'Skills Graph'}}">
+									<viz:dataset>
+										<viz.data:FlattenedDataset data="{/Skills}">
+											<viz.data:dimensions>
+												<viz.data:DimensionDefinition name="Skills" value="{Technical_Skill}"/>
+											</viz.data:dimensions>
+											<viz.data:measures>
+												<viz.data:MeasureDefinition name="Total" value="{Value}"/>
+											</viz.data:measures>
+										</viz.data:FlattenedDataset>
+									</viz:dataset>
+									<viz:feeds>
+										<viz.feeds:FeedItem id='valueAxisFeed' uid="valueAxis" type="Measure" values="Total"/>
+										<viz.feeds:FeedItem id='categoryAxisFeed' uid="categoryAxis" type="Dimension" values="Skills"/>
+									</viz:feeds>
+								</viz:VizFrame>
+							</l:flexContent>
+						</l:FixFlex>
 					</Panel>
 					<!--</Panel>-->
 					<!--Table-->
-					<Table id="table1" class="sapUiSizeCompact" items="{invoice>/Invoices}" >
+					<Table id="userdatatable" class="sapUiSizeCompact" items="{invoice>/Result}" growing="true" growingThreshold="5">
 						<!--Search option-->
 						<!--<headerToolbar>-->
 						<infoToolbar>
 							<OverflowToolbar id="otbSubheader">
-								<Label text="Home"/>
+								<Label text="Hive List"/>
 								<ToolbarSpacer/>
-								<SearchField ariaLabelledBy="text1" id="ShipperName" liveChange="onFilter">
-									<layoutData><OverflowToolbarLayoutData maxWidth="300px" shrinkable="true" priority="NeverOverflow"/></layoutData>
-								</SearchField>
+								<!--<SearchField ariaLabelledBy="text1" id="ShipperName" liveChange="onFilter">-->
+									<!--<layoutData><OverflowToolbarLayoutData maxWidth="300px" shrinkable="true" priority="NeverOverflow"/></layoutData>-->
+								<!--</SearchField>-->
 								<!--		<Button text="Reset" type="Transparent" press="onReset"/>-->
 								<!--		<OverflowToolbarButton tooltip="Sort" type="Transparent" text="Sort" icon="sap-icon://sort" press="onSort"/>-->
 								<!--		<OverflowToolbarButton tooltip="Group" type="Transparent" text="Group" icon="sap-icon://group-2" press="onGroup"/>-->
@@ -99,9 +99,9 @@
 						<!-- Column data-->
 						<ColumnListItem press="onPress" type="Navigation">
 							<cells>
-								<Text text="{invoice>ManagerName}"></Text>
-								<ObjectIdentifier title="{invoice>HiveName}"/>
-								<Text text="{invoice>Num}"></Text>
+								<Text text="{invoice>MANAGERNAME}"></Text>
+								<ObjectIdentifier title="{invoice>HIVENAME}"/>
+								<Text text="{invoice>NUMBER}"></Text>
 								<!--<Text text="{invoice>ShipperName}"></Text>-->
 								<!--<Text text="{invoice>Quantity}"></Text>-->
 								<!-- 	<Text text="{invoice>ExtendedPrice}"></Text> -->
