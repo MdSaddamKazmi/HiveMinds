@@ -17,15 +17,11 @@
 			"phone": true
 		}
 	},
-
 	"sap.ui5": {
 		"rootView": {
 			"viewName": "my.Test.view.App",
 			"type": "XML",
 			"async": true
-		
-	
-
 		},
 		"dependencies": {
 			"minUI5Version": "1.60",
@@ -40,29 +36,27 @@
 			}
 		},
 		"resources": {
-			"css": [{
-				"uri": "css/style.css"
-			}]
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
 		},
-
 		"routing": {
 			"config": {
 				"routerClass": "sap.m.routing.Router",
 				"viewType": "XML",
 				"viewPath": "my.Test.view",
-
 				"controlId": "App",
 				"controlAggregation": "pages",
 				"async": true
-
 			},
-			"routes": [{
+			"routes": [
+				{
 					"pattern": "",
 					"name": "app",
 					"target": "app"
-
 				},
-
 				{
 					"pattern": "detail/{managername}/{hivename}",
 					"name": "detail",
@@ -73,15 +67,16 @@
 				"app": {
 					"viewId": "App",
 					"viewName": "App"
-
 				},
 				"detail": {
 					"viewId": "Detail",
 					"viewName": "Detail"
-
 				}
 			}
-
 		}
+	},
+	"sap.platform.hcp": {
+		"uri": "",
+		"_version": "1.1.0"
 	}
 }
