@@ -12,45 +12,91 @@ sap.ui.define([
 		onInit: function () {
 
 			// set data model on view
-			var oData = {
-				recipient: {
-					name: "Test"
-				}
-			};
-			var oModel = new JSONModel(oData);
-			this.getView().setModel(oModel);
+			// var oData = {
+			// 	recipient: {
+			// 		name: "Test"
+			// 	}
+			// };
+			// var oModel = new JSONModel(oData);
+			// this.getView().setModel(oModel);
 
 			this.bGrouped = false;
 			this.bDescending = false;
 			this.sSearchQuery = 0;
 			this.fnApplyFiltersAndOrdering();
 
-			var oModel1 = new sap.ui.model.json.JSONModel({
-				Skills: [{
-						"Technical_Skill": "OO_ABAP",
-						"Value": "8"
-					}, {
-						"Technical_Skill": "ABAP",
-						"Value": "10"
-					}, {
-						"Technical_Skill": "ABAP ON HANA",
-						"Value": "6"
-					}, {
-						"Technical_Skill": "CDS",
-						"Value": "6"
-					}, {
-						"Technical_Skill": "FIORI/UI5",
-						"Value": "5"
-					}, {
-						"Technical_Skill": "RAP",
-						"Value": "4"
-					}
+			// var oModel1 = new sap.ui.model.json.JSONModel({
+			// 	Skills: [{
+			// 			"Technical_Skill": "OO_ABAP",
+			// 			"Value": "8"
+			// 		}, {
+			// 			"Technical_Skill": "ABAP",
+			// 			"Value": "10"
+			// 		}, {
+			// 			"Technical_Skill": "ABAP ON HANA",
+			// 			"Value": "6"
+			// 		}, {
+			// 			"Technical_Skill": "CDS",
+			// 			"Value": "6"
+			// 		}, {
+			// 			"Technical_Skill": "FIORI/UI5",
+			// 			"Value": "5"
+			// 		}, {
+			// 			"Technical_Skill": "RAP",
+			// 			"Value": "4"
+			// 		}
 
-				]
+			// 	]
 
+			// });
+
+			var oModel = new sap.ui.model.odata.v2.ODataModel("/sap/opu/odata/sap/ZHIVEMINDS_SRV");
+			sap.ui.getCore().setModel(oModel, "myModel");
+
+			var myModel = sap.ui.getCore().getModel("myModel");
+			myModel.setHeaders({
+				"X-Requested-With": "X"
+			});
+			
+			
+			var readurl = "/SKILLGRAPHSet";
+			var that = this;
+			myModel.read(readurl, {
+				success: function (oData, oResponse) {
+					// debugger;
+					var oModel1 = new sap.ui.model.json.JSONModel({
+						"Skills": oData.results
+					});
+					// var tab = that.getView().byId("userdatatable");
+					// tab.setModel(userdata);
+					that.getView().setModel(oModel1);
+
+				},
+				error: function (err) {
+					// debugger;
+				}
+			});
+			
+			
+			
+			var readurl1 = "/HIVELISTSet";
+			// var that = this;
+			myModel.read(readurl1, {
+				success: function (oData, oResponse) {
+					// debugger;
+					var userdata = new sap.ui.model.json.JSONModel({
+						"Result": oData.results
+					});
+					var tab = that.getView().byId("userdatatable");
+					tab.setModel(userdata, "invoice");
+
+				},
+				error: function (err) {
+					// debugger;
+				}
 			});
 
-			this.getView().setModel(oModel1);
+			// this.getView().setModel(oModel1);
 
 			this.getChatBot();
 
@@ -127,11 +173,15 @@ sap.ui.define([
 		},
 
 		onPress: function (oEvent) {
-			var spath = oEvent.getSource().getBindingContext("invoice").getPath();
-			var selectedPath = JSON.stringify(oEvent.getSource().getBindingContext("invoice").getProperty(spath));
+			// var spath = oEvent.getSource().getBindingContext("invoice").getPath();
+			// var selectedPath = JSON.stringify(oEvent.getSource().getBindingContext("invoice").getProperty(spath));
+			var mngrname = oEvent.getSource().getBindingContext("invoice").getProperty("MANAGERNAME");
+			var hvname = oEvent.getSource().getBindingContext("invoice").getProperty("HIVENAME");
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("detail", {
-				"invoicePath": selectedPath
+				"managername": mngrname,
+				"hivename": hvname
+				
 			});
 		}
 
