@@ -2,7 +2,7 @@
 	<!--	<Page navButtonPress="onNavBack" showNavButton="true" title="Test - Details">
 		<ObjectHeader intro="{invoice>ShipperName}" title="{invoice>ProductName}"/>
 	</Page> -->
-	<Page navButtonPress="onNavBack" showNavButton="true" title="Test - Details">
+	<Page navButtonPress="onNavBack" showNavButton="true" title="Hive Details">
 		<!--<Text class="sapUiTinyMargin" text="{/invoicePath/Team_Name}"/>-->
 		<!--<Text text="saddam"/>-->
 		<l:BlockLayout id="BlockLayout" background="Dashboard">
@@ -14,10 +14,10 @@
 					<FlexBox justifyContent="Center" class="responsive myBoldFont">
 						<l:VerticalLayout class="sapUiSmallMarginBeginEnd">
 							<FlexBox justifyContent="Center" class="responsive">
-								<Text text="Team Name : {/invoicePath/Team_Name}"/>
+								<Text text="Team Name : {/invoicePath/TEAMNAME}"/>
 							</FlexBox>
-							<FlexBox justifyContent="Center" class="responsive"><Text
-								text="Team Mmebers : {/invoicePath/Member1name} , {/invoicePath/Member2name} ,{/invoicePath/Member3name} , {/invoicePath/Member4name} ,"/></FlexBox>
+							<FlexBox justifyContent="Center" class="responsive">
+								<Text id="textid"/></FlexBox>
 							<!--<FlexBox justifyContent="Center" class="responsive">-->
 							<!--	<Text text="+91 9739074686"/></FlexBox>-->
 						</l:VerticalLayout>
@@ -51,13 +51,12 @@
 		</l:BlockLayout>
 		<l:BlockLayout id="BlockLayout1" background="Dashboard">
 			<l:BlockLayoutRow>
-				<l:BlockLayoutCell title="{/invoicePath/Member1name}">
+				<l:BlockLayoutCell id="blockcell1" title="{/invoicePath/EMPLOYEE1NAME}" visible="false">
 					<FlexBox justifyContent="Start" class="responsive" alignItems="Center">
 						<l:VerticalLayout class="sapUiSmallMarginBeginEnd">
 							<FlexBox justifyContent="Start" alignItems="Center" class="responsive ">
 								<VBox>
-									<Text
-										text="Current Skills : {/invoicePath/Member1Skill}"/>
+									<Text text="Technical Skills : {/invoicePath/EMPLOYEE1TECH}"/>
 									<Text text=""/>
 									<!--<Text text="Notice Period : 60 days"/>-->
 								</VBox>
@@ -68,15 +67,14 @@
 				</l:BlockLayoutCell>
 			</l:BlockLayoutRow>
 		</l:BlockLayout>
-				<l:BlockLayout id="BlockLayout2" background="Dashboard">
+		<l:BlockLayout id="BlockLayout2" background="Dashboard">
 			<l:BlockLayoutRow>
-				<l:BlockLayoutCell title="{/invoicePath/Member2name}">
+				<l:BlockLayoutCell id="blockcell2" title="{/invoicePath/EMPLOYEE2NAME}" visible="false">
 					<FlexBox justifyContent="Start" class="responsive" alignItems="Center">
 						<l:VerticalLayout class="sapUiSmallMarginBeginEnd">
 							<FlexBox justifyContent="Start" alignItems="Center" class="responsive ">
 								<VBox>
-									<Text
-										text="Current Skills : {/invoicePath/Member2Skill}"/>
+									<Text text="Technical Skills : {/invoicePath/EMPLOYEE2TECH}"/>
 									<Text text=""/>
 								</VBox>
 							</FlexBox>
@@ -86,15 +84,14 @@
 				</l:BlockLayoutCell>
 			</l:BlockLayoutRow>
 		</l:BlockLayout>
-				<l:BlockLayout id="BlockLayout3" background="Dashboard">
+		<l:BlockLayout id="BlockLayout3" background="Dashboard">
 			<l:BlockLayoutRow>
-				<l:BlockLayoutCell title="{/invoicePath/Member3name}">
+				<l:BlockLayoutCell id="blockcell3" title="{/invoicePath/EMPLOYEE3NAME}" visible="false">
 					<FlexBox justifyContent="Start" class="responsive" alignItems="Center">
 						<l:VerticalLayout class="sapUiSmallMarginBeginEnd">
 							<FlexBox justifyContent="Start" alignItems="Center" class="responsive ">
 								<VBox>
-								<Text
-										text="Current Skills : {/invoicePath/Member3Skill}"/>
+									<Text text="Technical Skills : {/invoicePath/EMPLOYEE3TECH}"/>
 									<Text text=""/>
 								</VBox>
 							</FlexBox>
@@ -104,15 +101,31 @@
 				</l:BlockLayoutCell>
 			</l:BlockLayoutRow>
 		</l:BlockLayout>
-				<l:BlockLayout id="BlockLayout4" background="Dashboard">
+		<l:BlockLayout id="BlockLayout4" background="Dashboard">
 			<l:BlockLayoutRow>
-				<l:BlockLayoutCell title="{/invoicePath/Member4name}">
+				<l:BlockLayoutCell id="blockcell4" title="{/invoicePath/EMPLOYEE4NAME}" visible="false">
 					<FlexBox justifyContent="Start" class="responsive" alignItems="Center">
 						<l:VerticalLayout class="sapUiSmallMarginBeginEnd">
 							<FlexBox justifyContent="Start" alignItems="Center" class="responsive ">
 								<VBox>
-									<Text
-										text="Current Skills : {/invoicePath/Member4Skill}"/>
+									<Text text="Technical Skills : {/invoicePath/EMPLOYEE4TECH}"/>
+									<Text text=""/>
+								</VBox>
+							</FlexBox>
+							<!--<FlexBox justifyContent="Center" class="responsive"><Text text="saddamkazmi25@gmail.com"/></FlexBox>-->
+						</l:VerticalLayout>
+					</FlexBox>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+		</l:BlockLayout>
+		<l:BlockLayout id="BlockLayout5" background="Dashboard">
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell id="blockcell5" title="{/invoicePath/EMPLOYEE5NAME}" visible="false">
+					<FlexBox justifyContent="Start" class="responsive" alignItems="Center">
+						<l:VerticalLayout class="sapUiSmallMarginBeginEnd">
+							<FlexBox justifyContent="Start" alignItems="Center" class="responsive ">
+								<VBox>
+									<Text text="Technical Skills : {/invoicePath/EMPLOYEE5TECH}"/>
 									<Text text=""/>
 								</VBox>
 							</FlexBox>
