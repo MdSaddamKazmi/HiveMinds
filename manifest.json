@@ -64,7 +64,7 @@
 				},
 
 				{
-					"pattern": "detail/{invoicePath}",
+					"pattern": "detail/{managername}/{hivename}",
 					"name": "detail",
 					"target": "detail"
 				}
